@@ -33,6 +33,7 @@ end
 When /^(?:|I )follow "([^"]*)"(?: within "([^"]*)")?$/ do |link, selector|
   with_scope(selector) do
     click_link(link)
+	sleep(5)
   end
 end
 

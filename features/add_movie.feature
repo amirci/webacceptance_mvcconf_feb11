@@ -7,7 +7,7 @@ Feature: Addition
 	Scenario: Add a movie
 		Given I have no movies
 		And   I am on "home"
-		When  I follow "add_media" 
-		And   I fill in "title" with "Young Frankenstein"
+		When  I follow "create" 
+		And   I fill in "movie_title" with "Young Frankenstein"
 		And   I press "Submit"
 		Then  I should see "Young Frankenstein"

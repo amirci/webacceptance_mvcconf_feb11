@@ -1,7 +1,7 @@
 require 'capybara/cucumber'
 require 'selenium-webdriver'
-	
-Capybara.default_driver = :selenium
+
+Capybara.default_driver = :culerity
 Capybara.app_host = "http://localhost:1591" 	
 Capybara.run_server = false
 Capybara.default_wait_time = 5
@@ -12,7 +12,7 @@ Capybara.default_wait_time = 5
 # steps to use the XPath syntax.
 Capybara.default_selector = :css
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Driver::Selenium.new(app, :browser => :ie)
+#Capybara.register_driver :selenium do |app|
+  #Capybara::Driver::Selenium.new(app, :browser => :ie)
   #Capybara::Driver::Selenium.new(app, :browser => :chrome)
-end
+#end

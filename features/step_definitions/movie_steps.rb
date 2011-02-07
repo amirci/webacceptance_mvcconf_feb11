@@ -14,5 +14,4 @@ Given /^I have no movies$/ do
   db = SQLite3::Database.new( "C:/temp/movielib.db" )
   db.execute( "delete from Movie" )  
   db.close
-  sleep(5)
 end
