@@ -35,53 +35,37 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+    <Reference Include="FluentNHibernate, Version=1.1.0.685, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\MavenThought.Commons\Castle.DynamicProxy2.dll</HintPath>
+      <HintPath>..\..\lib\fluentnhibernate-1.1.0.685\FluentNHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="FluentNHibernate, Version=1.0.0.593, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\nhibernate\FluentNHibernate.dll</HintPath>
+    <Reference Include="Gallio, Version=3.2.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\gallio-3.2.601\Gallio.dll</HintPath>
     </Reference>
-    <Reference Include="Gallio, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+    <Reference Include="MavenThought.Commons, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\MavenThought.Testing\Gallio.dll</HintPath>
+      <HintPath>..\..\lib\maventhought.commons-0.3.1\lib\MavenThought.Commons.dll</HintPath>
     </Reference>
-    <Reference Include="MavenThought.Commons, Version=0.2.0.37966, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MavenThought.Commons.Testing, Version=0.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\MavenThought.Commons\MavenThought.Commons.dll</HintPath>
+      <HintPath>..\..\lib\maventhought.testing-0.3.2\MavenThought.Commons.Testing.dll</HintPath>
     </Reference>
-    <Reference Include="MavenThought.Commons.Testing, Version=0.2.0.37966, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\MavenThought.Testing\MavenThought.Commons.Testing.dll</HintPath>
+    <Reference Include="MbUnit, Version=3.2.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\gallio-3.2.601\MbUnit.dll</HintPath>
     </Reference>
-    <Reference Include="MbUnit, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\MavenThought.Testing\MbUnit.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\nhibernate\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\nhibernate\NHibernate.ByteCode.Castle.dll</HintPath>
+      <HintPath>..\..\lib\nhibernate-2.1.2.4000\Required_Bins\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\MavenThought.Testing\Rhino.Mocks.dll</HintPath>
+      <HintPath>..\..\lib\rhino.mocks-3.6.0.0\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="SharpTestsEx, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8c60d8070630b1c1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\SharpTestEx\SharpTestsEx.dll</HintPath>
+      <HintPath>..\..\lib\sharptestsex-1.0.0.0.20100911\sharptestsex\SharpTestsEx.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.SQLite, Version=1.0.60.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\nhibernate\System.Data.SQLite.DLL</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>

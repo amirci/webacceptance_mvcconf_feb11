@@ -1,0 +1,54 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    albacore (0.2.2)
+      rake (>= 0.8.7)
+      rubyzip (>= 0.9.4)
+    castle.core (1.1.0.0)
+    castle.dynamicproxy2 (2.1.0.0)
+      castle.core (= 1.1.0.0)
+    commonservicelocator (1.0.0.0)
+    fluentnhibernate (1.1.0.685)
+      nhibernate (= 2.1.2.4000)
+    gallio (3.2.601)
+    git (1.2.5)
+    log4net (1.2.10.0)
+    maventhought.commons (0.3.0)
+    maventhought.testing (0.3.2)
+      commonservicelocator
+      gallio (~> 3.2)
+      nunit
+      rhino.mocks (~> 3.6)
+      structuremap.automocking (~> 2.6.1.1)
+      xunitnet
+    mvccontrib (2.0.95.1)
+    nhibernate (2.1.2.4000)
+      castle.core (= 1.1.0.0)
+      castle.dynamicproxy2 (= 2.1.0.0)
+      log4net (= 1.2.10.0)
+    noodle (0.3.0)
+      bundler (>= 1.0.0.rc.3)
+      rake
+    nunit (2.5.7.10213.20100801)
+    rake (0.8.7)
+    rhino.mocks (3.6.0.0)
+    rubyzip (0.9.4)
+    sharptestsex (1.0.0.0.20100911)
+    structuremap.automocking (2.6.1.1)
+    xunitnet (1.6.0)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  albacore
+  fluentnhibernate
+  gallio (~> 3.2)
+  git
+  maventhought.commons
+  maventhought.testing
+  mvccontrib
+  noodle
+  rhino.mocks (~> 3.6)
+  sharptestsex
+  structuremap.automocking (~> 2.6.1.1)

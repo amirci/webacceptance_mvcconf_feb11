@@ -31,7 +31,7 @@ namespace MavenThought.MediaLibrary.Core.Tests
         [It]
         public void Should_update_the_title()
         {
-            this.Sut.Title.Should().Be.EqualTo(this._newTitle);
+            this.Sut.Title.Should().Be(this._newTitle);
         }
 
         /// <summary>

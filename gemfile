@@ -1,0 +1,24 @@
+source :rubygems
+
+group :setup do
+	gem 'albacore'
+	gem 'git'
+	gem 'noodle'
+end
+
+group :dev do
+    gem 'sharptestsex'
+	gem 'gallio', '~> 3.2'
+	gem 'rhino.mocks',  '~> 3.6'
+	gem 'structuremap.automocking', '~> 2.6.1.1'
+	gem 'maventhought.testing'
+	gem 'maventhought.commons'
+end
+
+group :runtime do
+	#nothing yet....
+	gem 'mvccontrib'
+	gem 'fluentnhibernate'
+	#gem 'nhibernate'
+end
+

@@ -1,51 +1,65 @@
-msbuild = 'c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\MSBuild'
+require 'rubygems'    
+#require 'bundler'
 
-msbuild_file = "MavenThought.MediaLibrary.msbuild"
+#require 'bundler/setup' # does not work
+puts "Chequing bundled dependencies, please wait...."
 
-msbuild_cmd = "#{msbuild} #{msbuild_file}"
+system "bundle install --system --quiet"
 
-task :default => [:build]
+require 'albacore'
+require 'git'
+require 'noodle'
+require 'rake/clean'
 
-desc "Builds the project"
-task :build do
-	call_target msbuild_cmd, :build
+include FileUtils
+
+solution_file = FileList["*.sln"].first
+build_file = FileList["*.msbuild"].first
+project_name = "MovieLibrary"
+commit = Git.open(".").log.first.sha[0..10] rescue 'na'
+version = IO.readlines('VERSION')[0] rescue "0.0.0.0"
+
+CLEAN.include("main/**/bin", "main/**/obj", "test/**/obj", "test/**/bin")
+
+CLOBBER.include("**/_*", "**/.svn", "lib/*", "**/*.user", "**/*.cache", "**/*.suo")
+
+desc 'Default build'
+task :default => ["build:all"]
+
+desc 'Setup requirements to build and deploy'
+task :setup => ["setup:dep:local"]
+
+desc "Run all tests"
+task :test => ["test:all"]
+
+namespace :setup do
+	namespace :dep do
+		Noodle::Rake::NoodleTask.new :local do |n|
+			n.groups << :runtime
+			n.groups << :dev
+		end
+	end
 end
 
-desc "Cleans the release and debug files"
-task :clean do
-	call_target msbuild_cmd, :clean
-end
+namespace :build do
 
-desc "Rebuild the application by cleaning and then building"
-task :rebuild => [:clean, :build] do
-	#nothing to do....
+	desc "Build the project"
+	msbuild :all, :config do |msb, args|
+		msb.properties :configuration => args[:config] || :Debug
+		msb.targets :Build
+		msb.solution = solution_file
+	end
+
+	desc "Rebuild the project"
+	task :re => ["clean", "build:all"]
 end
 
 namespace :test do
-
-	desc "Builds and then runs all the tests under test folder"
-	task :all => [:build] do
-		call_target msbuild_cmd, :test
-	end
-
-	desc "Runs the test class that matches the name"
-	task :class, [:testee] => [:build] do |t, args|
-		call_target msbuild_cmd, :testclass, "Testee=#{args.testee}"
+	
+	desc 'Run all tests'
+	task :all => [:default] do 
+		tests = FileList["test/**/bin/debug/**/*.Tests.dll"].join " "
+		system "./tools/gallio/bin/gallio.echo.exe #{tests}"
 	end
 	
-	desc "Runs the test for an assembly"
-	task :assembly, [:testee] => [:build] do |t, args|
-		call_target msbuild_cmd, :testassembly, "Testee=#{args.testee}"
-	end
-	
-	desc "Runs the test for a feature (tagee without @)"
-	task :feature, [:tagee] => [:build] do |t, args|
-		call_target msbuild_cmd, :feature, "Tag=#{args.tagee}"
-	end
-
-	desc "Runs all the features tests"
-	task :features => [:build] do 
-		call_target msbuild_cmd, :features
-	end
 end
-

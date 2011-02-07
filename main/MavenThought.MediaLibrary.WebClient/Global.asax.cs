@@ -46,7 +46,9 @@ namespace MavenThought.MediaLibrary.WebClient
             this.SetupContainer();
 
             // Register the factory for the controllers
-            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(this.Container));
+            ControllerBuilder
+                .Current
+                .SetControllerFactory(new WindsorControllerFactory(this.Container));
             
             // Register the routes
             RegisterRoutes(RouteTable.Routes);

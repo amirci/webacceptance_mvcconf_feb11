@@ -12,27 +12,28 @@ Folder structure of the project:
 		--- Rakefile: Main rake file to launch build, test, etc. Do rake -T to get all the tasks available.
 		+-- main: Project files included in the solution
 		+-- test: Test project files included in the solution
-		+-- lib: Dependencies used by all the projects (nhibernate, nunit, mbunit, etc)
+		+-- features: Features used by Capybara + Cucumber
+		+-- lib: Dependencies used by all the projects (most installed with bundler)
 		+-- tools: Tools used to run tests, msbuild tasks, etc.
 		
-Please read my post with the introduction to the BDD session at http://orthocoders.com/2010/05/26/real-world-bdd-introduction.
+
+If you are not familiar with BDD please read my post with the introduction to the BDD at http://orthocoders.com/2010/05/26/real-world-bdd-introduction.
 
 Prerequisites to run it:
-	* Rake: Install ruby or iron ruby with ruby gems to get rake.
-		Here some instructions: http://marcinobel.com/index.php/rake-net-projects-installation-setup/
-	* Run the following commands:
+	* Install ruby.
+		Here some instructions: http://rubyinstaller.org/
+
+	* Make sure ruby is in the path, then run the following commands:
 		- gem update --system
-		- gem install rake capybara --no-ri --no-rdoc
-		- gem install bundler
+		- gem install rake bundler --no-ri --no-rdoc
+	
+	* Install jRuby
+		- Go to http://jruby.org/
 	
 Prerequisites to modify it:
 	* VS 2010
 	* ASP .NET MVC 2: http://www.asp.net/mvc
 	
-Good to have (highly recommended)
-	* Resharper: http://www.jetbrains.com
-	* VSCommands: Tool to group and ungroup items (recommended, not required) 
-		http://visualstudiogallery.msdn.microsoft.com/en-us/E93945C9-96E8-4A0D-BCC3-BD40BF799773
 		
 Sanity check:
 	* From command prompt, on the root of the project run "rake -T", u should see all the tasks.
@@ -43,8 +44,8 @@ Sanity check:
 	  
 		Tests run: 3, Errors: 0, Failures: 0, Inconclusive: 1, Time.....
 	
-If u r attending the presentation and have any issues setting up the code feel free to find me and letting me know, I'll help you with the setup.
+If u r attending the presentation and have any issues setting up the code let me know and I'll help you with the setup.
 
-Any comments, bugs, issues, please let me know.
+Any comments, bugs, issues, please contact me.
 
 Enjoy.
