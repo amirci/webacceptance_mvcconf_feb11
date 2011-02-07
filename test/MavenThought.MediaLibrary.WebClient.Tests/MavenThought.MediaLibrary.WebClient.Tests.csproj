@@ -38,9 +38,11 @@
     <Reference Include="Gallio, Version=3.2.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
       <HintPath>..\..\lib\gallio-3.2.601\Gallio.dll</HintPath>
     </Reference>
-    <Reference Include="MavenThought.Commons, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\maventhought.commons-0.3.1\lib\MavenThought.Commons.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib2\nhibernate\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MavenThought.Commons">
+      <HintPath>..\..\lib\maventhought.commons-0.3.0\lib\MavenThought.Commons.dll</HintPath>
     </Reference>
     <Reference Include="MavenThought.Commons.Testing, Version=0.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -49,14 +51,23 @@
     <Reference Include="MbUnit, Version=3.2.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
       <HintPath>..\..\lib\gallio-3.2.601\MbUnit.dll</HintPath>
     </Reference>
-    <Reference Include="MvcContrib.TestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\lib\mvccontrib-2.0.95.1\MvcContrib.TestHelper.dll</HintPath>
+    <Reference Include="MvcContrib">
+      <HintPath>..\..\lib2\mvccontrib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.TestHelper">
+      <HintPath>..\..\lib2\mvccontrib\MvcContrib.TestHelper.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <HintPath>..\..\lib\rhino.mocks-3.6.0.0\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="SharpTestsEx">
       <HintPath>..\..\lib\sharptestsex-1.0.0.0.20100911\sharptestsex\SharpTestsEx.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\lib\structuremap.automocking-2.6.1.1\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.AutoMocking">
+      <HintPath>..\..\lib\structuremap.automocking-2.6.1.1\StructureMap.AutoMocking.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">

@@ -16,9 +16,6 @@ group :dev do
 end
 
 group :runtime do
-	#nothing yet....
-	gem 'mvccontrib'
-	gem 'fluentnhibernate'
-	#gem 'nhibernate'
+	#so far all the version are from lib2
 end
 

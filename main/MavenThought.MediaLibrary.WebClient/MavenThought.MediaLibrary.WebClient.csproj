@@ -37,33 +37,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\castle.core-2.5.1.0.20100926\dotNet35\Castle.Core.dll</HintPath>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\lib2\Castle\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\castle.windsor-2.5.1.0\dotNet35\Castle.Windsor.dll</HintPath>
+    <Reference Include="Castle.DynamicProxy2">
+      <HintPath>..\..\lib2\Castle\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
-    <Reference Include="MvcContrib, Version=2.0.36.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\mvccontrib-2.0.95.1\MvcContrib.dll</HintPath>
+    <Reference Include="Castle.MicroKernel">
+      <HintPath>..\..\lib2\Castle\Castle.MicroKernel.dll</HintPath>
     </Reference>
-    <Reference Include="MvcContrib.Castle, Version=1.5.996.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\mvccontrib.extras\MvcContrib.Castle.dll</HintPath>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\lib2\Castle\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="NHaml, Version=1.5.0.2, Culture=neutral, PublicKeyToken=d603208bac452365, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\nhaml\NHaml.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\..\lib2\Castle\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="NHaml.Web.Mvc, Version=1.5.0.2, Culture=neutral, PublicKeyToken=d603208bac452365, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\nhaml\NHaml.Web.Mvc.dll</HintPath>
+    <Reference Include="MvcContrib">
+      <HintPath>..\..\lib2\mvccontrib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.Castle">
+      <HintPath>..\..\lib2\mvccontrib\MvcContrib.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHaml">
+      <HintPath>..\..\lib2\nhaml\NHaml.dll</HintPath>
+    </Reference>
+    <Reference Include="NHaml.Web.Mvc">
+      <HintPath>..\..\lib2\nhaml\NHaml.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\lib2\nhibernate\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Commons.Binsor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Binsor\Rhino.Commons.Binsor.dll</HintPath>
+      <HintPath>..\..\lib2\Binsor\Rhino.Commons.Binsor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -71,6 +76,9 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\lib2\nhibernate\System.Data.SQLite.DLL</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />

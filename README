@@ -13,7 +13,7 @@ Folder structure of the project:
 		+-- main: Project files included in the solution
 		+-- test: Test project files included in the solution
 		+-- features: Features used by Capybara + Cucumber
-		+-- lib: Dependencies used by all the projects (most installed with bundler)
+		+-- lib2: Dependencies used by the projects that can't be installed with bundler
 		+-- tools: Tools used to run tests, msbuild tasks, etc.
 		
 
