@@ -29,6 +29,7 @@ Prerequisites to run it:
 	
 	* Install jRuby
 		- Go to http://jruby.org/
+		- install celerity: jruby -S gem install celerity
 	
 Prerequisites to modify it:
 	* VS 2010
@@ -40,6 +41,7 @@ Sanity check:
 	* From command prompt, on the root of the project run "rake setup", all the dependencies should be installed for you.
 	* From command prompt, on the root of the project run "rake build"
 	* From command prompt, on the root of the project run "rake test:all", all tests should run, u should see the output on the command window.
+	* Open the solution and run the web application
 	* From command prompt, on the root of the project run "cucumber", you should see something like:
 			3 scenarios (3 passed)
 			13 steps (13 passed)

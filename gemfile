@@ -6,6 +6,12 @@ group :setup do
 	gem 'noodle'
 end
 
+group :testing do
+	gem 'capybara'
+	gem 'cucumber'
+	gem 'rspec'
+end
+
 group :dev do
     gem 'sharptestsex'
 	gem 'gallio', '~> 3.2'
@@ -13,9 +19,6 @@ group :dev do
 	gem 'structuremap.automocking', '~> 2.6.1.1'
 	gem 'maventhought.testing'
 	gem 'maventhought.commons'
-	gem 'capybara'
-	gem 'cucumber'
-	gem 'rspec'
 end
 
 group :runtime do
