@@ -37,13 +37,13 @@ Prerequisites to modify it:
 		
 Sanity check:
 	* From command prompt, on the root of the project run "rake -T", u should see all the tasks.
+	* From command prompt, on the root of the project run "rake setup", all the dependencies should be installed for you.
 	* From command prompt, on the root of the project run "rake build"
 	* From command prompt, on the root of the project run "rake test:all", all tests should run, u should see the output on the command window.
-	* From command prompt, on the root of the project run "rake test:features", all the features should run, u should see the browser 
-	  appear and dissaper, and the output on the command window. The result should look something like:
-	  
-		Tests run: 3, Errors: 0, Failures: 0, Inconclusive: 1, Time.....
-	
+	* From command prompt, on the root of the project run "cucumber", you should see something like:
+			3 scenarios (3 passed)
+			13 steps (13 passed)
+
 If u r attending the presentation and have any issues setting up the code let me know and I'll help you with the setup.
 
 Any comments, bugs, issues, please contact me.

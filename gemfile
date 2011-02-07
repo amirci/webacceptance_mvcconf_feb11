@@ -13,6 +13,9 @@ group :dev do
 	gem 'structuremap.automocking', '~> 2.6.1.1'
 	gem 'maventhought.testing'
 	gem 'maventhought.commons'
+	gem 'capybara'
+	gem 'cucumber'
+	gem 'rspec'
 end
 
 group :runtime do
