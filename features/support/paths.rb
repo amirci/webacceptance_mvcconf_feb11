@@ -11,6 +11,9 @@ module NavigationHelpers
     when /home/
       '/'
       
+    when /Movies/
+      '/Movies'
+	  
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

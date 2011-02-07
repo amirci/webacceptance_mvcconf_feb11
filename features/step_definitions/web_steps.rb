@@ -32,9 +32,13 @@ end
 
 When /^(?:|I )follow "([^"]*)"(?: within "([^"]*)")?$/ do |link, selector|
   with_scope(selector) do
-    #find_link(link).click
-    click_link(link)
-	sleep(5)
+    l = find_link(link)
+	puts "Inspecting the link #{l.inspect}"
+	l.click
+    node = find(:xpath, "//a[.='#{link}']")
+	node.click
+	puts "Inspecting the link #{node.inspect}"
+    #click_link(link)
   end
 end
 

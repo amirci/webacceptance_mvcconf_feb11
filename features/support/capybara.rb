@@ -11,6 +11,7 @@ Capybara.run_server = false
 # steps to use the XPath syntax.
 Capybara.default_selector = :css
 
-#Capybara.register_driver :selenium do |app|
-#  Capybara::Driver::Selenium.new(app, :browser => :ie)
-#end
+Capybara.register_driver :selenium do |app|
+  #Capybara::Driver::Selenium.new(app, :browser => :ie)
+  Capybara::Driver::Selenium.new(app, :browser => :chrome)
+end
