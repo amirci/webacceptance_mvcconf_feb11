@@ -9,7 +9,8 @@
       Media Library
     #menu
       = Html.ActionLink( "Browse contents", "Index", "Movies" )
-      = Html.ActionLink( "Add Media", "Create", "Movies" )
+      = Html.ActionLink( "Add Media", "Create", "Movies", new { id = "add_media" }  )
+      = Html.ActionLink( "About", "Index", "About" )
     #content
       _
     #sidebar

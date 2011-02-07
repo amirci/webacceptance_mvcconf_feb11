@@ -4,6 +4,7 @@ require 'selenium-webdriver'
 Capybara.default_driver = :selenium
 Capybara.app_host = "http://localhost:1591" 	
 Capybara.run_server = false
+Capybara.default_wait_time = 5
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
 # order to ease the transition to Capybara we set the default here. If you'd
@@ -12,6 +13,6 @@ Capybara.run_server = false
 Capybara.default_selector = :css
 
 Capybara.register_driver :selenium do |app|
-  #Capybara::Driver::Selenium.new(app, :browser => :ie)
-  Capybara::Driver::Selenium.new(app, :browser => :chrome)
+  Capybara::Driver::Selenium.new(app, :browser => :ie)
+  #Capybara::Driver::Selenium.new(app, :browser => :chrome)
 end

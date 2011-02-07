@@ -5,8 +5,9 @@ Feature: Addition
 	I want to add movies to the library
 
 	Scenario: Add a movie
-		Given I am on "home"
-		When  I follow "Add Media" 
+		Given I have no movies
+		And   I am on "home"
+		When  I follow "add_media" 
 		And   I fill in "title" with "Young Frankenstein"
 		And   I press "Submit"
 		Then  I should see "Young Frankenstein"

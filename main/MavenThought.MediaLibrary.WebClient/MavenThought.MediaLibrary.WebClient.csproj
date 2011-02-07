@@ -111,6 +111,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -151,6 +152,9 @@
     <Content Include="Content\Images\media_frenzy_logo.gif" />
     <Content Include="Content\Images\media_imgs.gif" />
     <None Include="Content\Site.less" />
+    <None Include="Views\About\Index.haml">
+      <SubType>ASPXCodeBehind</SubType>
+    </None>
     <None Include="Views\Movies\Create.haml">
       <SubType>ASPXCodeBehind</SubType>
     </None>

@@ -9,5 +9,8 @@ component "HomeController", HomeController:
 component "MoviesController", MoviesController:
   @lifestyle = "transient"
   
+component "AboutController", AboutController:
+  @lifestyle = "transient"
+
 component IMediaLibrary, StorageMediaLibrary:
   databaseFile = "C:/temp/movielib.db"
