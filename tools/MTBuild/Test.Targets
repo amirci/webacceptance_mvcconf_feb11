@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)\tools\MsBuildCommunityTasks</MSBuildCommunityTasksPath>
+	</PropertyGroup>
+	
+    <UsingTask TaskName="Gallio.MSBuildTasks.Gallio" AssemblyFile="$(MSBuildProjectDirectory)\tools\Gallio\bin\Gallio.MSBuildTasks.dll"/>
+    
+	<Import Project="$(MSBuildProjectDirectory)\tools\MsBuildCommunityTasks\MsBuild.Community.Tasks.Targets"/>
+
+	<Target Name="Test">
+		<ItemGroup>
+		  <TestAssemblies Include="test\**\bin\$(Configuration)\*.Tests.dll" 
+						  Exclude="test\**\*.Acceptance.Tests.dll"/>
+		</ItemGroup>
+		<Gallio Files="@(TestAssemblies)" IgnoreFailures="true">
+		  <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
+		</Gallio>
+		<Error Condition="$(ExitCode) == 1" Text="Tests execution failed!"/>
+	</Target>
+
+  	<Target Name="TestAssembly">
+		<ItemGroup>
+			<TestAssemblies Include="test\**\bin\$(Configuration)\*$(Testee).Tests.dll" Exclude="test\**\*.Acceptance.Tests.dll"/>
+		</ItemGroup>
+		<Message Text="The testee found for $(Testee) is @(TestAssemblies)"/>
+		<Gallio IgnoreFailures="true" Files="@(TestAssemblies)">
+		  <Output TaskParameter="ExitCode" PropertyName="ExitCode"/>
+		</Gallio>
+		<Error Text="Tests execution failed" Condition="'$(ExitCode)' == 1" />
+	</Target>
+  
+	<Target Name="TestClass">
+		<ItemGroup>
+		  <TestAssemblies Include="test\**\bin\$(Configuration)\*.Tests.dll"
+						  Exclude="test\**\bin\$(Configuration)\*.Acceptance.Tests.dll"/>
+		</ItemGroup>
+		<Message Text="Testing @(TestAssemblies)"/>
+		<Gallio IgnoreFailures="true" Files="@(TestAssemblies)" ReportTypes="Text" ReportNameFormat="mbunit"
+				Filter="Type:$(Testee)" Verbosity="Quiet">
+		  <Output TaskParameter="ExitCode" PropertyName="ExitCode"/>
+		</Gallio>
+		<Error Text="Tests execution failed" Condition="'$(ExitCode)' == 1" />
+	</Target>
+
+	<Target Name="Features">
+		<ItemGroup>
+			<TestAssemblies Include="test\**\bin\$(Configuration)\*.Acceptance.Tests.dll"/>
+		</ItemGroup>
+		<Message Text="Features @(TestAssemblies)"/>
+		<NUnit Assemblies="@(TestAssemblies)"
+			   ToolPath="tools\nunit">
+		  <Output TaskParameter="ExitCode" PropertyName="ExitCode"/>
+		</NUnit>
+		<Error Text="Tests execution failed" Condition="'$(ExitCode)' == 1" />
+	</Target>
+
+	<Target Name="Feature">
+		<ItemGroup>
+			<TestAssemblies Include="test\**\bin\$(Configuration)\*.Acceptance.Tests.dll"/>
+		</ItemGroup>
+		<Message Text="Features @(TestAssemblies)"/>
+		<NUnit Assemblies="@(TestAssemblies)"
+				IncludeCategory="$(Tag)"
+			   ToolPath="tools\nunit">
+		  <Output TaskParameter="ExitCode" PropertyName="ExitCode"/>
+		</NUnit>
+		<Error Text="Tests execution failed" Condition="'$(ExitCode)' == 1" />
+	</Target>
+	
+</Project>

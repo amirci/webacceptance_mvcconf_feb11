@@ -1,0 +1,8 @@
+﻿- foreach (var media in ViewData.Model)
+  %table.element
+    %tr
+      %td.title = media.Title
+    %tr
+      %td.image = Html.LocalImage(media.Title)
+- if( ViewData.Model.Count == 0 )
+    Sorry no movies available!

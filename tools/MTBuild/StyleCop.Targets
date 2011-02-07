@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<Target Name="StyleCop">
+	
+		<ItemGroup>
+			<AllSolutions Include="*.sln"/>
+		</ItemGroup>
+		
+		<PropertyGroup>
+			<ToolsDir>$(MSBuildProjectDirectory)\tools</ToolsDir>
+			<OutputDir>$(MSBuildProjectDirectory)\Output</OutputDir>
+			<Xslt>$(ToolsDir)\msxsl.exe</Xslt>
+			<StyleCopSln Condition="$(StyleCopSln) == ''">@(AllSolutions)</StyleCopSln>
+			<StyleCopCmd>tools\stylecopcmd\StyleCopCmd -sf $(StyleCopSln) -ifp AssemblyInfo.cs -of output\stylecop.xml -sc Settings.StyleCop -tf tools\StyleCopCmd\StyleCopReport.xsl</StyleCopCmd>
+			<XsltCmd>"$(Xslt)" "$(OutputDir)\stylecop.violations.xml" "$(ToolsDir)\stylecopcmd\ViolationsReport.xsl" -o "$(OutputDir)\StyleCop.Violations.html"</XsltCmd>
+		</PropertyGroup>
+		
+		<MakeDir Directories="$(OutputDir)"/>
+
+		<!-- Run the StyleCopCmd from tools -->
+		<Exec Command="$(StyleCopCmd)"  />
+		<Exec Command="$(XsltCmd)"/>
+		<XmlQuery XmlFileName="Output\stylecop.violations.xml"
+				  XPath = "count(/StyleCopViolations/Violation[@RuleId != 'SA0102'])">
+			<Output TaskParameter="Values" PropertyName="OtherViolations" />
+		</XmlQuery>
+		<Message Text="Found $(OtherViolations) Violations"/>
+		<Error Text="Stylecop Failed! Please check output\stylecop.violations.html!" Condition="$(OtherViolations) != 0"/>
+	</Target>
+
+</Project>

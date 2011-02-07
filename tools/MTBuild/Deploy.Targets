@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)\tools\MSBuildCommunityTasks</MSBuildCommunityTasksPath>
+		<DeployFolder Condition="$(DeployFolder) == ''">\temp\Builds\$(ProjectName)</DeployFolder>
+	</PropertyGroup>
+	
+	<Import Project="$(MSBuildProjectDirectory)\tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+
+	<Target Name="Deploy">
+		<SvnVersion LocalPath="$(MSBuildProjectDirectory)" ToolPath="tools\svn" Condition="'$(Revision)' == ''">
+		  <Output TaskParameter="Revision" PropertyName="Revision" />
+		</SvnVersion>
+
+		<PropertyGroup>
+			<ExportProject>$(MSBuildProjectFile)</ExportProject>
+		</PropertyGroup>
+
+		<MSBuild Projects="$(ExportProject)" 
+				 Targets="UpdateAssemblyVersion;Build;Test" 
+				 Properties="Configuration=Release;Revision=$(Revision)"/>
+	
+		<MakeDir Directories="$(DeployFolder)"/>
+
+		<Message Text="Deploying to $(DeployFolder) "/>
+		
+		<MSBuild Projects="$(ExportProject)" Targets="DeployZipFile" 
+		         Properties="Project=MavenThought.Commons 2.0\main\MavenThought.Commons;Revision=$(Revision);Deploy=MavenThought.Commons 2.0"/>
+
+		<MSBuild Projects="$(ExportProject)" Targets="DeployZipFile" 
+		         Properties="Project=MavenThought.Commons 3.5\main\MavenThought.Commons.WPF;Revision=$(Revision);Deploy=MavenThought.Commons 3.5"/>
+		
+		<MSBuild Projects="$(ExportProject)" Targets="DeployZipFile" 
+		         Properties="Project=MavenThought.Commons.Testing\main\MavenThought.Commons.Testing;Revision=$(Revision);Deploy=MavenThought.Commons.Testing"/>
+	</Target>
+
+	<Target Name="UpdateAssemblyVersion">
+		<SvnVersion LocalPath="$(MSBuildProjectDirectory)" ToolPath="tools\svn" 
+					Condition="'$(Revision)' == ''">
+			<Output TaskParameter="Revision" PropertyName="Revision" />
+		</SvnVersion>
+
+		<PropertyGroup>
+			<Version Condition="$(Version) == ''">$(Major).$(Minor).$(Build).$(Revision)</Version>
+		</PropertyGroup>
+
+		<ItemGroup>
+		  <AssemblyFiles Include=".\**\AssemblyInfo.cs"/>
+		</ItemGroup>
+
+		<Message Text="Updating assemblies to Version: $(Version)"/>
+
+		<FileUpdate Files="@(AssemblyFiles)"
+					Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
+					ReplacementText="$(Version)" />
+	</Target>  
+	
+	<Target Name="DeployZipFile">
+		<ItemGroup>
+		  <SourceFiles Include="$(Project)\**\bin\Release\*.dll"/>
+		</ItemGroup>
+
+		<SvnVersion LocalPath="." ToolPath="tools\svn" Condition="'$(Revision)' == ''">
+		  <Output TaskParameter="Revision" PropertyName="Revision" />
+		</SvnVersion>
+
+		<PropertyGroup>
+		  <DeployFileName Condition="'$Deploy' == ''">$(Project)</DeployFileName>
+		  <DeployFileName Condition="'$Deploy' != ''">$(Deploy)</DeployFileName>
+		  <Version Condition="$(Version) == ''">$(Major).$(Minor).$(Build).$(Revision)</Version>
+		  <TempFolder>$(DeployFolder)\temp</TempFolder>
+		</PropertyGroup>
+	
+		<RemoveDir Directories="$(TempFolder)"/>
+		
+		<Copy SourceFiles="@(SourceFiles)" DestinationFolder="$(TempFolder)">
+			<Output TaskParameter="CopiedFiles" PropertyName="Copied"/>
+		</Copy>
+    
+		<Message Text="Copied files $(Copied)"/>
+    
+		<Zip Files="$(Copied)"
+	         ZipFileName="$(DeployFolder)\$(Version)\$(DeployFileName)-$(Version).zip"
+	         WorkingDirectory="$(TempFolder)"/>
+			 
+		<RemoveDir Directories="$(TempFolder)"/>
+	</Target>
+	
+</Project>

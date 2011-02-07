@@ -1,0 +1,50 @@
+Quality Driven Web Acceptance Testing - MVC Virtual Conference - Feb - 2011
+
+Author: Amir Barylko
+Contact: amir@barylko.com
+Twitter: @abarylko
+
+The source in this repository contains the demo used for the presentation.
+
+Folder structure of the project:
+	MediaLibrary
+		--- MavenThought.MediaLibrary.sln : Main solution file
+		--- Rakefile: Main rake file to launch build, test, etc. Do rake -T to get all the tasks available.
+		+-- main: Project files included in the solution
+		+-- test: Test project files included in the solution
+		+-- lib: Dependencies used by all the projects (nhibernate, nunit, mbunit, etc)
+		+-- tools: Tools used to run tests, msbuild tasks, etc.
+		
+Please read my post with the introduction to the BDD session at http://orthocoders.com/2010/05/26/real-world-bdd-introduction.
+
+Prerequisites to run it:
+	* Rake: Install ruby or iron ruby with ruby gems to get rake.
+		Here some instructions: http://marcinobel.com/index.php/rake-net-projects-installation-setup/
+	* Run the following commands:
+		- gem update --system
+		- gem install rake capybara --no-ri --no-rdoc
+		- gem install bundler
+	
+Prerequisites to modify it:
+	* VS 2010
+	* ASP .NET MVC 2: http://www.asp.net/mvc
+	
+Good to have (highly recommended)
+	* Resharper: http://www.jetbrains.com
+	* VSCommands: Tool to group and ungroup items (recommended, not required) 
+		http://visualstudiogallery.msdn.microsoft.com/en-us/E93945C9-96E8-4A0D-BCC3-BD40BF799773
+		
+Sanity check:
+	* From command prompt, on the root of the project run "rake -T", u should see all the tasks.
+	* From command prompt, on the root of the project run "rake build"
+	* From command prompt, on the root of the project run "rake test:all", all tests should run, u should see the output on the command window.
+	* From command prompt, on the root of the project run "rake test:features", all the features should run, u should see the browser 
+	  appear and dissaper, and the output on the command window. The result should look something like:
+	  
+		Tests run: 3, Errors: 0, Failures: 0, Inconclusive: 1, Time.....
+	
+If u r attending the presentation and have any issues setting up the code feel free to find me and letting me know, I'll help you with the setup.
+
+Any comments, bugs, issues, please let me know.
+
+Enjoy.

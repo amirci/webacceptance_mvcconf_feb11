@@ -1,0 +1,62 @@
+﻿@blue_color: #306BB1;
+@gray_color: #99AABB;
+@bg_menu_color: #306BB1;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+#header {
+  margin: 0px;
+  height: 79px;
+  width:  100%;
+  background: url( /content/images/header_background.png ) repeat-x;
+
+  .logo {
+    margin: 10px 0px 0px 5px;
+    float: left;
+  }
+}
+
+#menu {
+  border-top {
+    width: 1px;
+    style: solid;
+    color: @blue_color;
+  }
+  border-bottom {
+    width: 1px;
+    style: solid;
+    color: @blue_color;
+  }
+  background: @gray_color;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  
+  padding {
+    top: 6px;
+    bottom: 3px;
+    left: 3px;
+  }
+  
+  font {
+    family: verdana;
+    size: 12px;
+  }
+  a {
+    color: white;
+    padding: 3px 5px 3px 5px;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    background-color: @bg_menu_color;
+  }
+}
+
+

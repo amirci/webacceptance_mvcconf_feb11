@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<ProjectName>MediaLibrary</ProjectName>
+		<ExportFolder>\temp\Export\$(ProjectName)</ExportFolder>
+		<BuildFolder>\temp\Builds\$(ProjectName)\Latest</BuildFolder>
+		<Major>0</Major>
+		<Minor>1</Minor>
+		<Build>0</Build>
+		<Configuration Condition="$(Configuration) == ''">Debug</Configuration>
+	</PropertyGroup>
+  
+	<Target Name="Setup64">
+		<ItemGroup>
+		  <Files64 Include="lib\nhibernate\64\*"/>
+		</ItemGroup>
+		<Copy SourceFiles="@(Files64)" DestinationFolder="lib\nhibernate" Condition="$(ProgramW6432) != ''"/>
+	</Target>
+
+    <Import Project="tools\MTBuild\Basic.Targets"/>
+
+	<Import Project="tools\MTBuild\Test.Targets"/>
+	
+</Project>

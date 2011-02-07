@@ -1,0 +1,101 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BD744581-CAA3-4190-8142-120AF23E9C41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Features", "Features", "{D082D8D2-B98B-495F-8AF5-ED8BBA0D701D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MavenThought.MediaLibrary.Domain", "main\MavenThought.MediaLibrary.Domain\MavenThought.MediaLibrary.Domain.csproj", "{B0460A37-24B0-4826-8BB7-AFFDA8A40B0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MavenThought.MediaLibrary.WebClient", "main\MavenThought.MediaLibrary.WebClient\MavenThought.MediaLibrary.WebClient.csproj", "{9EE1A5A0-A74A-42BF-B1EE-F816EF53239B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MavenThought.MediaLibrary.Core", "main\MavenThought.MediaLibrary.Core\MavenThought.MediaLibrary.Core.csproj", "{56484E7F-B200-43EF-924B-BAE916E8E631}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MavenThought.MediaLibrary.Core.Tests", "test\MavenThought.MediaLibrary.Core.Tests\MavenThought.MediaLibrary.Core.Tests.csproj", "{86DFB313-7551-4820-BFFD-2D63FEDECE53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MavenThought.MediaLibrary.WebClient.Tests", "test\MavenThought.MediaLibrary.WebClient.Tests\MavenThought.MediaLibrary.WebClient.Tests.csproj", "{8F05E772-D46A-4C8E-9D02-E6660C27BC61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MavenThought.MediaLibrary.Storage.NHibernate", "main\MavenThought.MediaLibrary.Storage.NHibernate\MavenThought.MediaLibrary.Storage.NHibernate.csproj", "{058D869F-B50A-49F7-B93B-8B5F0EEDE9EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MavenThought.MediaLibrary.Storage.NHibernate.Tests", "test\MavenThought.MediaLibrary.Storage.NHibernate.Tests\MavenThought.MediaLibrary.Storage.NHibernate.Tests.csproj", "{FF21B2CA-B1A4-4CA7-8750-A7B10E53B6E0}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs09.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Core\\Core.csproj
+		SccProjectName1 = Core
+		SccLocalPath1 = Core
+		SccProjectUniqueName2 = MediaWeb\\MediaWeb.csproj
+		SccProjectName2 = MediaWeb
+		SccLocalPath2 = MediaWeb
+		SccProjectUniqueName3 = MediaWeb.Tests\\MediaWeb.Tests.csproj
+		SccProjectName3 = MediaWeb.Tests
+		SccLocalPath3 = MediaWeb.Tests
+		SccProjectUniqueName4 = Core.Tests\\Core.Tests.csproj
+		SccProjectName4 = Core.Tests
+		SccLocalPath4 = Core.Tests
+		SccProjectUniqueName5 = Services\\Services.csproj
+		SccProjectName5 = Services
+		SccLocalPath5 = Services
+		SccProjectUniqueName6 = MediaDesktopClient\\MediaDesktopClient.csproj
+		SccProjectName6 = MediaDesktopClient
+		SccLocalPath6 = MediaDesktopClient
+		SccProjectUniqueName7 = Core.Model.LINQ\\Core.Model.ADOEF.csproj
+		SccProjectName7 = Core.Model.LINQ
+		SccLocalPath7 = Core.Model.LINQ
+		SccProjectUniqueName8 = Core.Model.LINQ.Tests\\Core.Model.ADOEF.Tests.csproj
+		SccProjectName8 = Core.Model.LINQ.Tests
+		SccLocalPath8 = Core.Model.LINQ.Tests
+		SccProjectUniqueName9 = Core.Model.ActiveRecord\\Core.Model.ActiveRecord.csproj
+		SccProjectName9 = Core.Model.ActiveRecord
+		SccLocalPath9 = Core.Model.ActiveRecord
+		SccProjectUniqueName10 = Core.Model.ActiveRecord.Tests\\Core.Model.ActiveRecord.Tests.csproj
+		SccProjectName10 = Core.Model.ActiveRecord.Tests
+		SccLocalPath10 = Core.Model.ActiveRecord.Tests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0460A37-24B0-4826-8BB7-AFFDA8A40B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0460A37-24B0-4826-8BB7-AFFDA8A40B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0460A37-24B0-4826-8BB7-AFFDA8A40B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0460A37-24B0-4826-8BB7-AFFDA8A40B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE1A5A0-A74A-42BF-B1EE-F816EF53239B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE1A5A0-A74A-42BF-B1EE-F816EF53239B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE1A5A0-A74A-42BF-B1EE-F816EF53239B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE1A5A0-A74A-42BF-B1EE-F816EF53239B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56484E7F-B200-43EF-924B-BAE916E8E631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56484E7F-B200-43EF-924B-BAE916E8E631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56484E7F-B200-43EF-924B-BAE916E8E631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56484E7F-B200-43EF-924B-BAE916E8E631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86DFB313-7551-4820-BFFD-2D63FEDECE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86DFB313-7551-4820-BFFD-2D63FEDECE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86DFB313-7551-4820-BFFD-2D63FEDECE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86DFB313-7551-4820-BFFD-2D63FEDECE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F05E772-D46A-4C8E-9D02-E6660C27BC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F05E772-D46A-4C8E-9D02-E6660C27BC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F05E772-D46A-4C8E-9D02-E6660C27BC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F05E772-D46A-4C8E-9D02-E6660C27BC61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{058D869F-B50A-49F7-B93B-8B5F0EEDE9EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{058D869F-B50A-49F7-B93B-8B5F0EEDE9EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{058D869F-B50A-49F7-B93B-8B5F0EEDE9EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{058D869F-B50A-49F7-B93B-8B5F0EEDE9EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF21B2CA-B1A4-4CA7-8750-A7B10E53B6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF21B2CA-B1A4-4CA7-8750-A7B10E53B6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF21B2CA-B1A4-4CA7-8750-A7B10E53B6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF21B2CA-B1A4-4CA7-8750-A7B10E53B6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{86DFB313-7551-4820-BFFD-2D63FEDECE53} = {BD744581-CAA3-4190-8142-120AF23E9C41}
+		{8F05E772-D46A-4C8E-9D02-E6660C27BC61} = {BD744581-CAA3-4190-8142-120AF23E9C41}
+		{FF21B2CA-B1A4-4CA7-8750-A7B10E53B6E0} = {BD744581-CAA3-4190-8142-120AF23E9C41}
+	EndGlobalSection
+EndGlobal

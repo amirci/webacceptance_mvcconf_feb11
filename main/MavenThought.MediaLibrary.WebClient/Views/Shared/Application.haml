@@ -1,0 +1,15 @@
+﻿!!!
+%html{xmlns="http://www.w3.org/1999/xhtml"}
+  %head
+    %title Media Library
+    %link{href="../../Content/Site.css" rel="stylesheet" type="text/css"}
+    %link{href="../../Content/tabs.css" rel="stylesheet" type="text/css"}
+  %body
+    #header
+      Media Library
+    #menu
+      = Html.ActionLink( "Browse contents", "Index", "Movies" )
+      = Html.ActionLink( "Add Media", "Create", "Movies" )
+    #content
+      _
+    #sidebar
