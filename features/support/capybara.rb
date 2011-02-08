@@ -2,6 +2,8 @@ require 'capybara/cucumber'
 require 'selenium-webdriver'
 
 Capybara.default_driver = :culerity
+#Capybara.default_driver = :selenium
+
 Capybara.app_host = "http://localhost:1591" 	
 Capybara.run_server = false
 Capybara.default_wait_time = 5

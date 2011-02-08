@@ -17,4 +17,4 @@ Feature: Browse Movies
 		Given I have no movies
 		When  I go to "home"
 		Then  I should see "Sorry no movies available!"
-		
+				

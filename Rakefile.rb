@@ -15,9 +15,7 @@ include FileUtils
 
 solution_file = FileList["*.sln"].first
 build_file = FileList["*.msbuild"].first
-project_name = "MovieLibrary"
-commit = Git.open(".").log.first.sha[0..10] rescue 'na'
-version = IO.readlines('VERSION')[0] rescue "0.0.0.0"
+project_name = "MavenThought.MovieLibrary"
 
 CLEAN.include("main/**/bin", "main/**/obj", "test/**/obj", "test/**/bin")
 
@@ -61,5 +59,8 @@ namespace :test do
 		tests = FileList["test/**/bin/debug/**/*.Tests.dll"].join " "
 		system "./tools/gallio/bin/gallio.echo.exe #{tests}"
 	end
-	
+
+	desc 'Run all features'
+	task :features => [:default] do
+	end
 end

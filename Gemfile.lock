@@ -68,6 +68,7 @@ GEM
       json_pure
       rubyzip
     sharptestsex (1.0.0.0.20100911)
+    sqlite3 (1.3.3-x86-mingw32)
     structuremap.automocking (2.6.1.1)
     term-ansicolor (1.0.5)
     xpath (0.1.3)
@@ -89,4 +90,5 @@ DEPENDENCIES
   rhino.mocks (~> 3.6)
   rspec
   sharptestsex
+  sqlite3
   structuremap.automocking (~> 2.6.1.1)
