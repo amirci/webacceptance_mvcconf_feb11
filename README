@@ -30,6 +30,7 @@ Prerequisites to run it:
 	* Install jRuby
 		- Go to http://jruby.org/
 		- install celerity: jruby -S gem install celerity
+		- if u get an error when running, please reade troubleshoot below
 		
 	* Install sqlite3
 		- Go to sqlite
@@ -50,7 +51,17 @@ Sanity check:
 			3 scenarios (3 passed)
 			13 steps (13 passed)
 
-If u r attending the presentation and have any issues setting up the code let me know and I'll help you with the setup.
+Troubleshoot:
+	- Running the test under Windows, get an error saying:
+			No such file or directory - RUBYOPT="" jruby "c:/Ruby187/lib/ruby/gems/1.8/gems/culerity-0.2.15/lib/start_celerity.rb" (Errno::ENOENT)
+
+	  Edit "c:/Ruby187/lib/ruby/gems/1.8/gems/culerity-0.2.15/lib/culerity.rb" and replace the run_server with:
+		def self.run_server
+			# original %{RUBYOPT="" #{jruby_invocation} "#{celerity_invocation}"}
+			IO.popen(%{#{jruby_invocation} "#{celerity_invocation}"}, 'r+').extend(ServerCommands)
+		end
+			
+Any issues setting up the code let me know and I'll help you.
 
 Any comments, bugs, issues, please contact me.
 
